@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "complier/Jump Threading.md",
+                "file": "complier/指令选择与合法化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Jump Threading"
+              "title": "指令选择与合法化"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -187,41 +189,47 @@
   },
   "active": "7aa86bcf31069a49",
   "lastOpenFiles": [
-    "并发/结构化并发.md",
     "complier/Jump Threading.md",
-    "GEMM.md",
-    "并发",
-    "CUDA Reduction 优化.md",
-    "llm/投机解码/Speculative Sampling.md",
-    "课外阅读/文化与社会.md",
-    "complier/IPSCCP.md",
+    "GPUProgramming/FMHA 优化.md",
+    "complier/整数范围分析.md",
+    "complier/GVN、FRE 与 PRE.md",
+    "complier/指令选择与合法化.md",
+    "complier/寄存器分配.md",
+    "complier/循环依赖分析.md",
+    "complier/内存优化证明：Alias Analysis 与 MemorySSA.md",
+    "complier/循环规范形与 LCSSA.md",
+    "complier/IR 对象模型与安全改写.md",
+    "complier/Alias Analysis.md",
+    "GPUProgramming/TileLang/examples/FMHA.md",
+    "AGENTS.md",
+    "complier/PAG.md",
+    "GPUProgramming/TileLang/01-Kernel与执行模型.md",
+    "GPUProgramming/tensor core.md",
+    "GPUProgramming/TileLang/examples/GEMM.md",
+    "GPUProgramming/H100 Memory Hierarchy.md",
+    "GPUProgramming/Tilelang.md",
+    "GPUProgramming/TileLang/examples/Reduction.md",
+    "GPUProgramming/TileLang/06-Persistent与性能分析.md",
+    "GPUProgramming/TileLang/05-Pipeline与异步执行.md",
+    "GPUProgramming/TileLang/04-计算原语与归约.md",
+    "GPUProgramming/TileLang/03-Layout与线程映射.md",
+    "GPUProgramming/TileLang/02-数据容器与存储层级.md",
+    "GPUProgramming/TileLang/README.md",
+    "GPUProgramming/TileLang/examples",
+    "GPUProgramming/TileLang",
+    "GPUProgramming",
+    "语言设计",
     "课外阅读",
-    "complier/CVP.md",
-    "llm/投机解码/性能模型与指标.md",
-    "llm/投机解码/README.md",
-    "llm/投机解码/Medusa.md",
-    "llm/投机解码/DSpark.md",
-    "llm/投机解码/EAGLE.md",
     "pic/Pasted image 20260712004018.png",
     "pic/Pasted image 20260711144244.png",
     "llm/投机解码",
     "llm",
-    "complier/ssa/构造.md",
-    "complier/cfg/dom.md",
     "complier/ssa",
     "complier/cfg",
-    "complier/README.md",
-    "complier/RegMask.md",
-    "complier/SCEV.md",
-    "Group.md",
     "complier",
-    "CPP.md",
-    "算法.md",
-    "latex.md",
     "pic/Pasted image 20240512005720.png",
     "pic/Pasted image 20240512001041.png",
     "pic/Pasted image 20240512000258.png",
-    "pic/Pasted image 20240511212552.png",
-    "pic.md"
+    "pic/Pasted image 20240511212552.png"
   ]
 }

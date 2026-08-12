@@ -58,6 +58,12 @@ if (x == y) {
 
 简单说，IPSCCP 问的是“这个值能不能传播成常量”，CVP 问的是“在这条路径上，前面的判断能不能让后面的判断变得多余”。
 
+## 与 PAG 和 alias analysis 的关系
+
+CVP 的核心是 [[complier/cfg/dom|CFG]] 上的 dominance 与路径条件，不是 [[PAG]] 上的指针可达性。一条 flow-insensitive PAG path 可能合并互斥控制路径，因此不能直接当作“当前块中必然成立”的 predicate。
+
+当机会来自 load、store 或 call 时，[[Alias Analysis|alias analysis]] 可以让相邻的内存化简或调用副作用分析证明内存不会被 clobber，PAG 则可以是 alias analysis 的底层表示。这会间接暴露更多供 CVP 消费的值和路径事实；具体 CVP 实现不一定直接查询 PAG 或 alias analysis。无法证明内存效果时，相关 pass 必须保守地保留可能的 clobber。
+
 ## 注意点
 
 - CVP 只能使用能证明的事实，不能把某条路径上的条件错误推广到所有路径。

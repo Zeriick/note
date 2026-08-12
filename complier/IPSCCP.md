@@ -75,6 +75,12 @@ IPSCCP 本身常见的结果包括：
 - 和 [[CVP]] 相比，IPSCCP 更关注 SSA value 是否能稳定变成常量；CVP 更关注某条路径上的条件关系能否简化后续判断。
 - 和内联不同，IPSCCP 不一定需要把函数体复制到调用点，也能通过调用图信息进行一部分跨过程推理。
 
+## 与 PAG 和 alias analysis 的关系
+
+IPSCCP 的稀疏传播图主要是 [[complier/ssa/构造|SSA]] def-use 链，并辅以 [[complier/cfg/dom|CFG]] 可执行边和调用关系；它不是在 [[PAG]] 上传播常量。PAG 中的 pointer/memory flow 可达性既不意味着值是常量，也不意味着对应 CFG 边可执行。
+
+间接关系出现在内存与调用副作用上。[[Alias Analysis|Alias analysis]]——其底层可以使用 PAG——可以帮助相邻分析或化简证明 store/call 不会改写某次 load，或为 mod/ref 摘要提供支撑，从而暴露 IPSCCP 可继续传播的常量。常见 IPSCCP 实现对任意可变内存仍很保守，并不保证直接查询 PAG 或 alias analysis。
+
 ## 保守边界
 
 跨过程分析必须保守。下面这些情况通常会降低它能证明的内容：
